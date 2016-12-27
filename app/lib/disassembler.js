@@ -6,6 +6,9 @@ const VERSION_TO_ENDPOINT = {
   "18": "http://erlang18-diss-service-3ef045ca.erlang-diss-stack.44aab943.svc.dockerapp.io:8018",
   "19": "http://erlang19-diss-service-2dcbe420.erlang-diss-stack.5747f7d7.svc.dockerapp.io:8019"
 };
+VERSION_TO_ENDPOINT["17"] = process.env.ERLANG17 || VERSION_TO_ENDPOINT["17"];
+VERSION_TO_ENDPOINT["18"] = process.env.ERLANG18 || VERSION_TO_ENDPOINT["18"];
+VERSION_TO_ENDPOINT["19"] = process.env.ERLANG19 || VERSION_TO_ENDPOINT["19"];
 
 class Disassembler {
 

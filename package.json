@@ -1,0 +1,32 @@
+{
+  "name": "erlangbytes",
+  "version": "1.0.0",
+  "description": "Erlang disassembler app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkeam/erlangbytes.git"
+  },
+  "keywords": [
+    "node",
+    "erlang",
+    "disassembler"
+  ],
+  "author": "Jon Keam <jpkeam@gmail.com> (http://jonkeam.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkeam/erlangbytes/issues"
+  },
+  "homepage": "https://github.com/jkeam/erlangbytes#readme",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "superagent": "^3.3.1",
+    "winston": "^2.3.0"
+  }
+}

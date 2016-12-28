@@ -33,6 +33,7 @@ class Disassembler {
     let code, version;
     ({code, version} = obj);
     const url = VERSION_TO_ENDPOINT[version];
+    const that = this;
     return new Promise( (resolve, reject) => {
       request
         .post(url)
@@ -40,7 +41,7 @@ class Disassembler {
         .send({ code })
         .end(function(err, res){
           if (err) {
-            this.logger.error(`Unable to contact ${url}`);
+            that.logger.error(`Unable to contact ${url}`);
             reject(err);
           } else {
             if (res && res.text) {
@@ -48,11 +49,11 @@ class Disassembler {
                 const result = JSON.parse(res.text);
                 resolve(result.result);
               } catch(parseError) {
-                this.logger.error(`Unable to parse ${parseError}`);
+                that.logger.error(`Unable to parse ${parseError}`);
                 reject(parseError);
               }
             } else {
-              this.logger.error(`Response was not formatted correctly`);
+              that.logger.error(`Response was not formatted correctly`);
               reject("Unknown error");
             }
           }

@@ -12,7 +12,7 @@ const app          = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const logger = new (winston.Logger)({
+const logger = winston.createLogger({
   transports: [
     new (winston.transports.Console)(),
     new (winston.transports.File)({ filename: `./logs/${env}.log` })

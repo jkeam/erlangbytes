@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const request = require('superagent');
 
 const VERSION_TO_ENDPOINT = {
@@ -33,7 +32,7 @@ class Disassembler {
     let code, version;
     ({code, version} = obj);
     const url = VERSION_TO_ENDPOINT[version];
-    return new Promise( (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       request
         .post(url)
         .type('form')
